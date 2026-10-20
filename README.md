@@ -1,4 +1,4 @@
-# wir – Musikplayer, Version 004.5
+# wir – Musikplayer, Version 004.6
 
 Progressive Web App für GitHub Pages mit eingebetteten MP3-Covern, Favoriten, Offline-Downloads und automatisch erstellter Playlist.
 
@@ -35,9 +35,18 @@ Im Repository-Hauptverzeichnis **ersetzen**: `index.html`, `app.js`, `style.css`
 Favoriten, Offline-Musik und bereits gespeicherte Einstellungen bleiben erhalten. Eigene Listen und Warteschlange werden nur auf dem jeweiligen Gerät verwaltet; die Warteschlange ist vorübergehend und wird nach einem Neustart geleert. Bei einem App-Update während der Wiedergabe fragt die App vor dem Neuladen nach.
 
 
-## Entwicklungsstand 004.6 (nur wir-test)
-- In der Filterzeile öffnet **Wiedergabelisten** (auf schmalen Displays **Listen**) die vorhandenen Listen; die aktive Liste ist markiert.
-- Unter **Wiedergabelisten bearbeiten …** lassen sich Listen erstellen, auswählen, umbenennen, mit Titeln befüllen/sortieren und löschen.
-- Die Kopfzeile zeigt weiterhin dynamisch den aktiven Listennamen und dessen Titelanzahl. Der bisherige Eintrag „Listen“ rechts oben entfällt.
-- Das Symbol ☷ öffnet weiterhin die Wiedergabeoptionen und Warteschlange. Weckton-Download und Offline-Funktionen bleiben erhalten.
-- Die Änderungen sind zunächst nur für `wir-test` vorgesehen.
+## Neu in 004.6 (Entwicklungsfassung für `wir-test`)
+
+- Die Schaltfläche **Wiedergabelisten** befindet sich jetzt neben **Alle Titel** und **Favoriten** in der Filterzeile. Auf schmalen Displays heißt sie **Listen**.
+- Ein Klick öffnet die vorhandenen Wiedergabelisten; die aktive Liste wird markiert.
+- Der Eintrag **Wiedergabelisten bearbeiten …** öffnet die Verwaltung zum Erstellen, Auswählen, Umbenennen, Befüllen, Sortieren und Löschen eigener Listen.
+- Die Playlist-Kopfzeile zeigt weiterhin dynamisch den Namen der aktiven Liste und ihre Titelanzahl. Die frühere separate Schaltfläche **Listen** rechts oben entfällt.
+- **☷** bleibt für Wiedergabeoptionen und Warteschlange; Weckton-Download, Favoriten und Offline-Funktionen bleiben erhalten.
+
+## Update 004.5 → 004.6
+
+In **`wir-test`** im Repository-Hauptverzeichnis ersetzen: `index.html`, `app.js`, `style.css`, `sw.js`, `version.json` und **`README.md`**.
+
+**Unverändert lassen:** `audio/`, `icons/`, `playlist.json`, `manifest.webmanifest`, `generate_playlist.py`, `.github/workflows/update-playlist.yml`.
+
+Die Produktivversion `wir` bleibt unverändert, bis die Testfassung freigegeben wird.
