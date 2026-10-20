@@ -69,3 +69,7 @@ header{display:flex;align-items:center;justify-content:space-between;flex:none;m
 .track-action-buttons button{background:#1a3655;border:1px solid #476986;border-radius:9px;color:#f2f7ff;text-align:left;padding:11px 13px;font:inherit;font-size:14px}
 .track-action-buttons button:active{background:#30577c}
 @media(max-width:600px){.list-tools{flex-wrap:wrap}.list-tools select{margin-left:auto}.list-tools .mode-toggle{min-width:28px}}
+
+/* 004.8: eindeutige, einheitliche SVG-Symbole für Wiederholung und Zufall */
+.list-tools .mode-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:32px;padding:4px 5px}
+.list-tools .mode-toggle svg{display:block;width:23px;height:23px;flex:none}

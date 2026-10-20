@@ -1,4 +1,4 @@
-# wir – Musikplayer, Version 004.7
+# wir – Musikplayer, Version 004.8
 
 Progressive Web App für GitHub Pages mit eingebetteten MP3-Covern, Favoriten, Offline-Downloads und automatisch erstellter Playlist.
 
@@ -67,3 +67,18 @@ In `wir-test` ersetzen: **`index.html`, `app.js`, `style.css`, `sw.js`, `version
 Unverändert: `audio/`, `icons/`, `playlist.json`, `manifest.webmanifest`, `generate_playlist.py`, `.github/workflows/update-playlist.yml`.
 
 Die Daten in `localStorage` (Favoriten, Listen, Einstellungen) und der separate Audio-Offline-Cache werden nicht zurückgesetzt. Die temporäre Warteschlange bleibt nicht über einen Neustart erhalten.
+
+## Neu in 004.8 (nur `wir-test`)
+
+- In „Wiedergabelisten bearbeiten“ heißt die Schaltfläche jetzt **„Liste bearbeiten“** statt „Titel bearbeiten“. Die Funktion bleibt unverändert: Titel hinzufügen, entfernen und anordnen. **„Umbenennen“** ändert weiterhin nur den Listennamen.
+- **Zufall** zeigt das vertraute Symbol mit zwei sich kreuzenden Pfeilen.
+- **Wiederholung** zeigt die zwei Pfeile im Kreislauf; bei „Einen Titel wiederholen“ erscheint zusätzlich eine kleine **1**. Der nicht aktive Zustand ist nicht hervorgehoben.
+- Beide Symbole sind direkt eingebettete SVG-Grafiken ohne externe Bilddateien. Die bestehende Bedienung und die gespeicherten Einstellungen bleiben erhalten.
+
+## Update 004.7 → 004.8
+
+Im Test-Repository `wir-test` diese **sechs Dateien ersetzen**: `index.html`, `app.js`, `style.css`, `sw.js`, `version.json`, `README.md`.
+
+Unverändert: `audio/`, `icons/`, `playlist.json`, `manifest.webmanifest`, `generate_playlist.py`, `.github/workflows/update-playlist.yml`.
+
+Die Produktivversion `wir` bleibt unverändert.
