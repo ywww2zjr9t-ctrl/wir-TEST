@@ -1,12 +1,17 @@
-# wir – Musikplayer, Version 005.1
+# wir – Musikplayer, Version 005.2
 
 Entwicklungsfassung für **wir-test**. Die Produktivversion `wir` bleibt unverändert.
 
-## Neu in 005.1
+## Neu in 005.2
+
+- **Weckerfenster auf iPhone:** Die Titelliste wird beim Öffnen nicht mehr automatisch eingeblendet. Stattdessen liegt der Fokus auf „Schließen“. Die Liste öffnet sich erst nach ausdrücklichem Antippen des Auswahlfelds.
+- **Verständlichere Anleitung:** Der Zweck des Downloads und die anschließende Auswahl in der Wecker-App werden direkt vor der Titelauswahl erläutert.
+
+## Bereits enthalten seit 005.1
 
 - **Spieldauer pro Titel:** Die Titelliste zeigt rechts eine feste Spalte mit der bereits in `playlist.json` hinterlegten Dauer (`duration`), beispielsweise `3:42` oder `1:03:25`. Unbekannte Dauer wird als Strich angezeigt.
 - **Aktualisierung der Web-App:** Tippen auf `wir.` oben links, `UNSERE MUSIK` oben rechts oder Ziehen und Loslassen prüft zuerst `version.json`. Bei einer neuen Version wird der Service Worker aktualisiert und die App mit frischer URL neu geladen. Ohne neue Version wird die Musikbibliothek aktualisiert.
-- **Service-Worker-Version 005.1:** Cache-Name und Registrierung wurden auf 005.1 aktualisiert, um alte App-Dateien nicht weiterzuverwenden. Der separate Offline-Audio-Cache bleibt bestehen.
+- **Service-Worker-Version 005.2:** Cache-Name und Registrierung wurden auf 005.2 aktualisiert, um alte App-Dateien nicht weiterzuverwenden. Der separate Offline-Audio-Cache bleibt bestehen.
 
 ### Wichtig zur Installation
 

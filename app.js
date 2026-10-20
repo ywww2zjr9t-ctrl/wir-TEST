@@ -2,7 +2,7 @@
 const $=id=>document.getElementById(id), audio=$('audio');
 let tracks=[],current=-1,filter='all',sort=localStorage.getItem('wir-sort-v1')||'original',playing=false;
 const OFFLINE_CACHE='wir-audio-offline-v1';let offlineFiles=new Set(),downloading=new Set(),downloadAllRunning=false,activeBlobUrl=null,loadToken=0;
-const APP_VERSION='005.1';
+const APP_VERSION='005.2';
 const storageKey='wir-favorites-v1';const selectedKey='wir-selected-track-v2';let refreshing=false;let favorites=new Set(JSON.parse(localStorage.getItem(storageKey)||'[]'));
 const remember=()=>localStorage.setItem(storageKey,JSON.stringify([...favorites]));
 // Persönliche Listen, Wiedergabe-Modus und temporäre Warteschlange bleiben lokal auf diesem Gerät.
@@ -150,6 +150,9 @@ function openAlarmDialog(){
  $('save-alarm').disabled=!tracks.length;
  $('alarm-instructions').hidden=true;
  $('alarm-dialog').showModal();
+ // iOS Safari fokussiert sonst automatisch das erste Select und öffnet die Titelliste.
+ // Stattdessen erhält der Schließen-Button den Anfangsfokus.
+ $('close-alarm').focus({preventScroll:true});
 }
 $('alarm-download').onclick=openAlarmDialog;
 $('close-alarm').onclick=()=>$('alarm-dialog').close();
@@ -303,4 +306,4 @@ document.addEventListener('touchstart',e=>{if(e.touches.length!==1||isPlaylistSc
 document.addEventListener('touchmove',e=>{if(pullStart===null)return;pullDistance=Math.max(0,e.touches[0].clientY-pullStart);if(pullDistance>12){indicator.style.opacity='1';indicator.style.transform='translate(-50%,0)';indicator.textContent=pullDistance>75?'↑ Loslassen zum Aktualisieren':'↓ Zum Aktualisieren ziehen'}},{passive:true});
 document.addEventListener('touchend',()=>{if(pullStart!==null&&pullDistance>75)void refreshEverything();pullStart=null;pullDistance=0;indicator.style.opacity='0';indicator.style.transform='translate(-50%,-15px)'},{passive:true});
 renderPlaylistSelector();updateModes();renderQueue();(async()=>{await refreshOfflineStatus();await refreshPlaylist({quiet:true});await refreshOfflineStatus()})();
-if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js?v=0051',{updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{})}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js?v=0052',{updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{})}
