@@ -1,8 +1,18 @@
-# wir – Musikplayer, Version 005.0
+# wir – Musikplayer, Version 005.1
 
 Entwicklungsfassung für **wir-test**. Die Produktivversion `wir` bleibt unverändert.
 
-## Neu in 005.0
+## Neu in 005.1
+
+- **Spieldauer pro Titel:** Die Titelliste zeigt rechts eine feste Spalte mit der bereits in `playlist.json` hinterlegten Dauer (`duration`), beispielsweise `3:42` oder `1:03:25`. Unbekannte Dauer wird als Strich angezeigt.
+- **Aktualisierung der Web-App:** Tippen auf `wir.` oben links, `UNSERE MUSIK` oben rechts oder Ziehen und Loslassen prüft zuerst `version.json`. Bei einer neuen Version wird der Service Worker aktualisiert und die App mit frischer URL neu geladen. Ohne neue Version wird die Musikbibliothek aktualisiert.
+- **Service-Worker-Version 005.1:** Cache-Name und Registrierung wurden auf 005.1 aktualisiert, um alte App-Dateien nicht weiterzuverwenden. Der separate Offline-Audio-Cache bleibt bestehen.
+
+### Wichtig zur Installation
+
+Die Versionsprüfung funktioniert nur, wenn bei einer neuen Veröffentlichung auch `version.json`, `sw.js`, `index.html`, `app.js` und `style.css` hochgeladen werden. Der Browser kann einen alten Stand zunächst zwischenspeichern; die Aktualisierung wird über die drei genannten Gesten angestoßen. Ein automatischer Wechsel bei laufender Wiedergabe wird vorab bestätigt.
+
+### Änderungen aus 005.0 (weiterhin enthalten)
 
 - Sortierauswahl in logisch zusammengehörenden Paaren: A–Z/Z–A, Neueste/Älteste, Längste/Kürzeste, eigene Reihenfolge/Favoriten zuerst.
 - Die normale Wiedergabe verwendet dieselbe Sortierung wie die sichtbare Liste; Zufallswiedergabe ist die Ausnahme.

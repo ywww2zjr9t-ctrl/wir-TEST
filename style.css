@@ -104,3 +104,7 @@ header{display:flex;align-items:center;justify-content:space-between;flex:none;m
 .sort-choices{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .sort-choice{min-width:0;overflow-wrap:break-word}
 @media(max-width:600px){.sort-dialog{width:min(94vw,410px)}.sort-choice{font-size:12px;padding:9px 7px}}
+
+/* 005.1: Laufzeit als feste, lesbare Spalte in jeder Playlist-Zeile */
+.track-duration{flex:0 0 auto;min-width:38px;text-align:right;font-size:12px;font-variant-numeric:tabular-nums;color:#a9bfd4;white-space:nowrap}
+@media(max-width:380px){.track-duration{min-width:33px;font-size:11px}.track{gap:2px}.mini-cover{width:34px;height:34px}}

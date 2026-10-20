@@ -1,5 +1,5 @@
-const CACHE='wir-player-0050-shell';
-const ASSETS=['./index.html','./style.css?v=0050','./app.js?v=0050','./version.json','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png'];
+const CACHE='wir-player-0051-shell';
+const ASSETS=['./index.html','./style.css?v=0051','./app.js?v=0051','./version.json','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png'];
 const PLAYLIST_CACHE='wir-playlist-offline-v1';
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil((async()=>{
