@@ -1,4 +1,4 @@
-# wir – Musikplayer, Version 004.6
+# wir – Musikplayer, Version 004.7
 
 Progressive Web App für GitHub Pages mit eingebetteten MP3-Covern, Favoriten, Offline-Downloads und automatisch erstellter Playlist.
 
@@ -50,3 +50,20 @@ In **`wir-test`** im Repository-Hauptverzeichnis ersetzen: `index.html`, `app.js
 **Unverändert lassen:** `audio/`, `icons/`, `playlist.json`, `manifest.webmanifest`, `generate_playlist.py`, `.github/workflows/update-playlist.yml`.
 
 Die Produktivversion `wir` bleibt unverändert, bis die Testfassung freigegeben wird.
+
+## Neu in 004.7 (nur `wir-test`)
+
+- Kopfzeile: **Wiedergabeliste: [eigener Name] (Anzahl)**; bei der Gesamtsammlung **Alle Titel (Anzahl)**.
+- Der Dialog „Wiedergabelisten“ enthält nur selbst erstellte Listen; die Gesamtsammlung ist über die vorhandene Schaltfläche „Alle Titel“ erreichbar.
+- Die missverständliche Menüschaltfläche ☷ entfällt. **Wiederholung** (alle / einen / aus) und **Zufall** (ein / aus) werden direkt über zwei kleine Schaltflächen gesteuert. Wiederholung bezieht sich auf die aktive Liste.
+- Die Warteschlange wird nur bei vorhandenen Einträgen als Schaltfläche angezeigt. Dort lassen sich Titel umordnen, entfernen oder die Warteschlange leeren.
+- **⋯** öffnet ein Titelaktionsmenü: jetzt abspielen, als Nächstes, an Warteschlange anhängen, zu eigener Liste hinzufügen oder (innerhalb einer eigenen Liste) aus dieser entfernen.
+- Favoriten sind bereits titelbezogen unter `wir-favorites-v1` gespeichert und damit in allen Wiedergabelisten einheitlich. Ein Herzchen ändert den Status überall.
+
+## Update 004.6 → 004.7
+
+In `wir-test` ersetzen: **`index.html`, `app.js`, `style.css`, `sw.js`, `version.json`, `README.md`**.
+
+Unverändert: `audio/`, `icons/`, `playlist.json`, `manifest.webmanifest`, `generate_playlist.py`, `.github/workflows/update-playlist.yml`.
+
+Die Daten in `localStorage` (Favoriten, Listen, Einstellungen) und der separate Audio-Offline-Cache werden nicht zurückgesetzt. Die temporäre Warteschlange bleibt nicht über einen Neustart erhalten.

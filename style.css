@@ -59,3 +59,13 @@ header{display:flex;align-items:center;justify-content:space-between;flex:none;m
 .lists-separator{border-top:1px solid #395573;margin:14px 0}
 @media(max-width:650px){.lists-label-long{display:none}.lists-label-short{display:inline}}
 @media(max-width:380px){.list-tools .lists-menu-trigger{padding-left:5px;padding-right:5px}}
+
+/* 004.7: Wiedergabemodi direkt in der Werkzeugzeile */
+.list-tools .mode-toggle{flex:none;min-width:29px;min-height:29px;font-size:19px;line-height:1;padding:4px 5px;color:#a9c1d9}
+.list-tools .mode-toggle.selected{background:#2b5275;color:#f4faff;border-color:#6a93b3}
+.list-tools .queue-open{white-space:nowrap;color:#c4def3;font-size:11px}
+.list-tools .queue-open[hidden],.track-action-buttons button[hidden]{display:none!important}
+.track-action-buttons{display:flex;flex-direction:column;gap:7px}
+.track-action-buttons button{background:#1a3655;border:1px solid #476986;border-radius:9px;color:#f2f7ff;text-align:left;padding:11px 13px;font:inherit;font-size:14px}
+.track-action-buttons button:active{background:#30577c}
+@media(max-width:600px){.list-tools{flex-wrap:wrap}.list-tools select{margin-left:auto}.list-tools .mode-toggle{min-width:28px}}
