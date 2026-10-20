@@ -1,29 +1,29 @@
-# wir · Musikplayer 004.3 – Sichere Offline-Löschung
+# wir – Musikplayer, Version 004.4
 
-Version 004.3 baut auf Version 004.2 auf. Das Layout der Playlist und alle bisherigen Funktionen bleiben erhalten.
+Progressive Web App für GitHub Pages mit eingebetteten MP3-Covern, Favoriten, Offline-Downloads und automatisch erstellter Playlist.
 
-## Änderung in 004.3
+## Neu in 004.4
 
-Beim Antippen des Häkchens ✓ neben einem offline gespeicherten Titel erscheint nun ein zur App passender Bestätigungsdialog statt der Safari-Systemabfrage.
+- Wiedergabemodus über das kompakte Menü **☷** in der vorhandenen Playlist-Kopfzeile: **Alle wiederholen** (Standard), **Titel wiederholen**, **Am Listenende stoppen** sowie **Zufallswiedergabe**.
+- Eigene, lokal gespeicherte Listen erstellen, bearbeiten, sortieren und löschen. Die gewählte Liste wird sofort zur aktiven Wiedergabeliste; laufende Musik wird nicht unterbrochen.
+- Im Listen-Menü lassen sich Titel mit Auf/Ab-Schaltflächen umordnen. Dies ist auch auf Touch-Geräten nutzbar.
+- Über **⋯** neben einem Titel lässt er sich für die spontane Warteschlange vormerken. Im Menü kann die Warteschlange umsortiert oder geleert werden. Sie hat beim automatischen Titelwechsel Vorrang.
+- Die ursprüngliche Musikbibliothek und die MP3-Dateien werden durch Listenänderungen nicht verändert.
 
-- **Titel behalten**: Die Offline-Datei bleibt erhalten (auch beim Schließen mit Escape).
-- **Titel löschen**: Nur die lokale Offline-Kopie dieses Titels wird entfernt. Der Titel bleibt in der Playlist und kann erneut heruntergeladen werden, solange er online verfügbar ist.
-- Keine zweite Sicherheitsabfrage und kein überflüssiger Hinweis auf „Abbrechen“ oder „OK“.
-- Herunterladen, Favoriten, Wiedergabe und Sammeldownload bleiben unverändert.
+## Bedienung
 
-## Update von 004.2 auf 004.3: Diese sechs Dateien hochladen
+Vier Wiedergabetasten: vorheriger Titel, Play/Pause, Stop, nächster Titel. Die Playlist ist intern scrollbar. Download-Pfeil speichert einzelne Titel offline, Häkchen bestätigt die Speicherung. Antippen des Häkchens öffnet die Abfrage **Titel behalten / Titel löschen**. Der Sammeldownload in der Kopfzeile lädt nur fehlende Titel. Herzchen markieren Favoriten.
 
-Alle sechs Dateien liegen im **Hauptverzeichnis** des Update-ZIP und gehören ins **Hauptverzeichnis** des GitHub-Repositories:
+**Aktualisierung:** Oben links auf „wir.“ oder rechts auf „UNSERE MUSIK“ tippen oder auf dem Smartphone herunterziehen und loslassen. Damit werden App-Version und Online-Mediathek geprüft.
 
-1. `app.js` – Bestätigungslogik
-2. `index.html` – Dialog und Versionsreferenzen
-3. `style.css` – Darstellung des Dialogs
-4. `sw.js` – aktualisierter App-Cache
-5. `version.json` – Version 004.3
-6. `README.md` – diese Dokumentation
+## GitHub
 
-**Nicht ersetzen:** `manifest.webmanifest`, `icons/`, `audio/`, `playlist.json`, `generate_playlist.py`, `.github/workflows/update-playlist.yml`.
+MP3s in `audio/` hochladen. `.github/workflows/update-playlist.yml` und `generate_playlist.py` erzeugen `playlist.json` automatisch. GitHub Pages veröffentlicht die Dateien. Das Projekt verwendet `manifest.webmanifest`, `sw.js` und `version.json`.
 
-## Hinweise
+## Update 004.3 → 004.4
 
-Nach dem Upload den erfolgreichen GitHub-Pages-Deploy abwarten. In Version 004.2 kann über die App-Aktualisierung eine neue Version erkannt werden. Bereits offline gespeicherte Audiodateien bleiben in ihrem separaten Cache `wir-audio-offline-v1` erhalten. Wie bei jeder PWA kann der Browser diesen Speicher unter bestimmten Umständen selbst bereinigen.
+Im Repository-Hauptverzeichnis **ersetzen**: `index.html`, `app.js`, `style.css`, `sw.js`, `version.json`, **`README.md`**.
+
+**Unverändert:** `audio/`, `icons/`, `playlist.json`, `manifest.webmanifest`, `generate_playlist.py`, `.github/workflows/update-playlist.yml`.
+
+Favoriten, Offline-Musik und bereits gespeicherte Einstellungen bleiben erhalten. Eigene Listen und Warteschlange werden nur auf dem jeweiligen Gerät verwaltet; die Warteschlange ist vorübergehend und wird nach einem Neustart geleert. Bei einem App-Update während der Wiedergabe fragt die App vor dem Neuladen nach.
