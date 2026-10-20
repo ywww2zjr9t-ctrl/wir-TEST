@@ -33,3 +33,11 @@ Im Repository-Hauptverzeichnis **ersetzen**: `index.html`, `app.js`, `style.css`
 **Unverändert:** `audio/`, `icons/`, `playlist.json`, `manifest.webmanifest`, `generate_playlist.py`, `.github/workflows/update-playlist.yml`.
 
 Favoriten, Offline-Musik und bereits gespeicherte Einstellungen bleiben erhalten. Eigene Listen und Warteschlange werden nur auf dem jeweiligen Gerät verwaltet; die Warteschlange ist vorübergehend und wird nach einem Neustart geleert. Bei einem App-Update während der Wiedergabe fragt die App vor dem Neuladen nach.
+
+
+## Entwicklungsstand 004.6 (nur wir-test)
+- In der Filterzeile öffnet **Wiedergabelisten** (auf schmalen Displays **Listen**) die vorhandenen Listen; die aktive Liste ist markiert.
+- Unter **Wiedergabelisten bearbeiten …** lassen sich Listen erstellen, auswählen, umbenennen, mit Titeln befüllen/sortieren und löschen.
+- Die Kopfzeile zeigt weiterhin dynamisch den aktiven Listennamen und dessen Titelanzahl. Der bisherige Eintrag „Listen“ rechts oben entfällt.
+- Das Symbol ☷ öffnet weiterhin die Wiedergabeoptionen und Warteschlange. Weckton-Download und Offline-Funktionen bleiben erhalten.
+- Die Änderungen sind zunächst nur für `wir-test` vorgesehen.

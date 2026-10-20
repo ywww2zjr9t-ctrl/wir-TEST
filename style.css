@@ -48,3 +48,14 @@ header{display:flex;align-items:center;justify-content:space-between;flex:none;m
 .alarm-dialog .alarm-instructions{margin-top:18px;padding:12px;border:1px solid #496786;border-radius:9px;background:#1b3859}
 .alarm-dialog .alarm-instructions[hidden]{display:none}
 @media(max-width:380px){#active-list-name{max-width:35vw}.list-tools .alarm-download{min-width:26px;padding:3px}}
+
+/* 004.6: Direkte Auswahl der Wiedergabelisten in der Filterzeile */
+.lists-label-short{display:none}
+.list-tools .lists-menu-trigger{white-space:nowrap;color:var(--accent)}
+.list-tools .lists-menu-trigger.selected{background:#2b5275;color:white}
+.lists-choices{display:flex;flex-direction:column;gap:5px;max-height:40vh;overflow-y:auto}
+.lists-choice,.lists-manage-button{width:100%;text-align:left;padding:11px 12px;border:1px solid #395573;border-radius:9px;background:#152c4a;color:var(--text);font:inherit}
+.lists-choice.active{background:#2b5275;border-color:#6990b2}
+.lists-separator{border-top:1px solid #395573;margin:14px 0}
+@media(max-width:650px){.lists-label-long{display:none}.lists-label-short{display:inline}}
+@media(max-width:380px){.list-tools .lists-menu-trigger{padding-left:5px;padding-right:5px}}
