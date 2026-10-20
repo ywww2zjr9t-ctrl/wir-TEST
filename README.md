@@ -1,6 +1,12 @@
-# wir – Musikplayer, Version 004.4
+# wir – Musikplayer, Version 004.5
 
 Progressive Web App für GitHub Pages mit eingebetteten MP3-Covern, Favoriten, Offline-Downloads und automatisch erstellter Playlist.
+
+## Neu in 004.5
+
+- Playlist-Kopfzeile zeigt automatisch den **Namen der aktiven Liste** und die **Anzahl ihrer Titel** an. Eigene Listennamen werden unverändert übernommen; es wird keine Liste namens „Vormittag“ vorgegeben. Rechts steht **Listen**.
+- Weckersymbol in der vorhandenen Filter-/Werkzeugzeile öffnet eine Titelauswahl für den Download als **normale Audiodatei**. Danach zeigt die App eine kurze Anleitung zum Einrichten in der Android-Uhr-App. Der Download ist unabhängig von der Offline-Speicherung der App. Der Browser bzw. das Gerät bestimmt den Speicherort. MP3, M4A und M4B behalten ihre Original-Dateiendung; für Android-Weckertöne ist MP3 am zuverlässigsten.
+- Der eigentliche Wecker wird nicht von dieser Web-App gestellt. Die Auswahl einer eigenen Audiodatei hängt von der Android-Uhr-App ab.
 
 ## Neu in 004.4
 
@@ -20,7 +26,7 @@ Vier Wiedergabetasten: vorheriger Titel, Play/Pause, Stop, nächster Titel. Die 
 
 MP3s in `audio/` hochladen. `.github/workflows/update-playlist.yml` und `generate_playlist.py` erzeugen `playlist.json` automatisch. GitHub Pages veröffentlicht die Dateien. Das Projekt verwendet `manifest.webmanifest`, `sw.js` und `version.json`.
 
-## Update 004.3 → 004.4
+## Update 004.4 → 004.5
 
 Im Repository-Hauptverzeichnis **ersetzen**: `index.html`, `app.js`, `style.css`, `sw.js`, `version.json`, **`README.md`**.
 
