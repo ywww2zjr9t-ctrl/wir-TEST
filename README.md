@@ -1,3 +1,37 @@
+# wir – Musikplayer, Version 005.0
+
+Entwicklungsfassung für **wir-test**. Die Produktivversion `wir` bleibt unverändert.
+
+## Neu in 005.0
+
+- Sortierauswahl in logisch zusammengehörenden Paaren: A–Z/Z–A, Neueste/Älteste, Längste/Kürzeste, eigene Reihenfolge/Favoriten zuerst.
+- Die normale Wiedergabe verwendet dieselbe Sortierung wie die sichtbare Liste; Zufallswiedergabe ist die Ausnahme.
+- Bei Wechsel der Sortierung läuft der aktuelle Titel zu Ende, danach folgt die neue Reihenfolge.
+- Beim Aktualisieren der Musikbibliothek werden verwaiste Einträge aus eigenen Listen und Warteschlange entfernt; neue Titel erscheinen nur automatisch in „Alle Titel“.
+- Größeres, klareres SVG-Weckersymbol; die Sammeldownload-Schaltfläche zeigt den Downloadpfeil bei fehlenden Dateien und ein Häkchen bei vollständig offline verfügbarer Sammlung.
+- Lange Listennamen werden in der Kopfzeile platzsparend abgeschnitten, ohne Bedienelemente zu verschieben.
+
+## Bedienregeln
+
+- Die sichtbare Sortierung bestimmt die normale Wiedergabereihenfolge.
+- Zufallswiedergabe verändert die angezeigte Sortierung nicht; die Reihenfolge wird intern gemischt.
+- Die Warteschlange hat bei automatischem Titelwechsel Vorrang.
+- Favoriten sind für jeden Titel in allen Listen einheitlich.
+- Eigene Listen und Favoriten werden auf dem jeweiligen Gerät gespeichert.
+- Ein laufender Titel wird beim Wechsel der Liste nicht unterbrochen.
+
+## Dateien für Update auf GitHub
+
+`index.html`, `app.js`, `style.css`, `sw.js`, `version.json`, `README.md`.
+
+`audio/`, `icons/`, `.github/workflows/`, `generate_playlist.py`, `manifest.webmanifest` und die automatisch erzeugte `playlist.json` bleiben unverändert.
+
+## Testhinweise
+
+Die Dateien wurden statisch geprüft. Browser- und Gerätetests sind noch notwendig. Bitte besonders Sortierung, Listenwechsel, Zufallsdurchlauf und Offline-Downloads prüfen.
+
+---
+
 # wir – Musikplayer, Version 004.9
 
 Progressive Web App für GitHub Pages mit eingebetteten MP3-Covern, Favoriten, Offline-Downloads und automatisch erstellter Playlist.

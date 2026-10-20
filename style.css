@@ -96,3 +96,11 @@ header{display:flex;align-items:center;justify-content:space-between;flex:none;m
 .sort-choice.active{background:#2c597c;border-color:#8ac3e9}
 @media(max-width:600px){.list-tools{padding-left:7px;padding-right:7px;gap:8px}.tool-row{gap:5px}.tool-row button{min-height:42px;height:42px;font-size:11px;padding:0 7px}.tool-library .sort-trigger{margin-left:auto}.tool-playback .mode-toggle,.tool-playback .alarm-download,.tool-playback .download-all{width:42px;min-width:42px}.tool-playback .queue-open{min-width:95px;font-size:11px}}
 @media(max-width:360px){.tool-row{gap:4px}.tool-row button{padding:0 5px;font-size:10px}.tool-playback .mode-toggle,.tool-playback .alarm-download,.tool-playback .download-all{width:40px;min-width:40px}.tool-playback .queue-open{min-width:90px}}
+
+/* 005.0: größere, eindeutig erkennbare Weckergrafik und sichere lange Beschriftungen */
+.tool-playback .alarm-download svg{width:30px;height:30px}
+.tool-row button{min-width:0}
+#active-list-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sort-choices{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.sort-choice{min-width:0;overflow-wrap:break-word}
+@media(max-width:600px){.sort-dialog{width:min(94vw,410px)}.sort-choice{font-size:12px;padding:9px 7px}}
