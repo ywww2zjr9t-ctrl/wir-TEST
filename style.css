@@ -73,3 +73,26 @@ header{display:flex;align-items:center;justify-content:space-between;flex:none;m
 /* 004.8: eindeutige, einheitliche SVG-Symbole für Wiederholung und Zufall */
 .list-tools .mode-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:32px;padding:4px 5px}
 .list-tools .mode-toggle svg{display:block;width:23px;height:23px;flex:none}
+
+/* 004.9: stabile zweizeilige Werkzeugleiste und einheitliche Bedienflächen */
+.list-tools{display:flex!important;flex-direction:column;align-items:stretch;gap:9px;padding:2px 10px 11px}
+.tool-row{display:flex;align-items:center;gap:7px;min-width:0;flex-wrap:nowrap}
+.tool-row button{box-sizing:border-box;min-height:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;font-size:12px;padding:0 10px;white-space:nowrap}
+.tool-library .sort-trigger{margin-left:auto;color:#c5e2f6}
+.tool-playback .mode-toggle,.tool-playback .alarm-download,.tool-playback .download-all{width:42px;min-width:42px;height:42px;min-height:42px;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.tool-playback .queue-open{margin-left:0;font-size:12px;min-width:110px;display:inline-flex!important;gap:4px}
+.tool-playback .queue-open:not(.has-items){opacity:.75}
+.tool-playback .queue-open:not(.has-items) #queue-count{display:none}
+.tool-playback .download-all{font-size:19px}
+.tool-playback .alarm-download svg{width:23px;height:23px}
+.queue-row button,.menu-buttons button,.offline-dialog-actions button{min-height:42px;box-sizing:border-box}
+.membership-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #ffffff22}
+.membership-info{display:flex;flex-direction:column;gap:3px;min-width:0;overflow-wrap:anywhere}
+.membership-info small{color:#adc2d8;font-size:12px}
+.membership-row button{min-width:95px;min-height:42px;background:#285b7d;color:#fff;border:1px solid #658cac;border-radius:8px;font:inherit;padding:7px 9px}
+.membership-row button.remove{background:#283c55}
+.sort-dialog{width:min(90vw,360px)}.sort-choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sort-choice{min-height:44px;text-align:left;padding:8px 10px;border:1px solid #456581;border-radius:9px;background:#183452;color:#f3f8ff;font:inherit;font-size:13px}
+.sort-choice.active{background:#2c597c;border-color:#8ac3e9}
+@media(max-width:600px){.list-tools{padding-left:7px;padding-right:7px;gap:8px}.tool-row{gap:5px}.tool-row button{min-height:42px;height:42px;font-size:11px;padding:0 7px}.tool-library .sort-trigger{margin-left:auto}.tool-playback .mode-toggle,.tool-playback .alarm-download,.tool-playback .download-all{width:42px;min-width:42px}.tool-playback .queue-open{min-width:95px;font-size:11px}}
+@media(max-width:360px){.tool-row{gap:4px}.tool-row button{padding:0 5px;font-size:10px}.tool-playback .mode-toggle,.tool-playback .alarm-download,.tool-playback .download-all{width:40px;min-width:40px}.tool-playback .queue-open{min-width:90px}}

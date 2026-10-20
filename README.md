@@ -1,4 +1,4 @@
-# wir – Musikplayer, Version 004.8
+# wir – Musikplayer, Version 004.9
 
 Progressive Web App für GitHub Pages mit eingebetteten MP3-Covern, Favoriten, Offline-Downloads und automatisch erstellter Playlist.
 
@@ -67,6 +67,23 @@ In `wir-test` ersetzen: **`index.html`, `app.js`, `style.css`, `sw.js`, `version
 Unverändert: `audio/`, `icons/`, `playlist.json`, `manifest.webmanifest`, `generate_playlist.py`, `.github/workflows/update-playlist.yml`.
 
 Die Daten in `localStorage` (Favoriten, Listen, Einstellungen) und der separate Audio-Offline-Cache werden nicht zurückgesetzt. Die temporäre Warteschlange bleibt nicht über einen Neustart erhalten.
+
+## Update 004.8 → 004.9 (nur `wir-test`)
+
+**Diese sieben Dateien ersetzen:** `index.html`, `app.js`, `style.css`, `sw.js`, `version.json`, `README.md`, `generate_playlist.py`.
+
+**Nicht ersetzen:** `audio/`, `icons/`, `manifest.webmanifest`, `.github/workflows/update-playlist.yml`, `playlist.json` (automatisch erzeugt).
+
+Nach dem Upload den GitHub-Actions-Workflow zur Playlist-Erstellung einmal ausführen, damit die neuen Metadaten `duration` und `addedAt` in `playlist.json` eingetragen werden. Bestehende Audiodateien bleiben erhalten.
+
+## Neu in 004.9
+
+- Zwei feste, kompakte Werkzeugzeilen mit einheitlicher Schaltflächenhöhe. Erste Zeile: Musikauswahl und Sortierung; zweite Zeile: Wiederholung, Zufall, Warteschlange, Wecker und Offline-Download.
+- Acht Sortierungen: Eigene Reihenfolge, A–Z, Z–A, neueste/älteste zuerst, längste/kürzeste zuerst, Favoriten zuerst. Die Einstellung bleibt gespeichert; die eigene Reihenfolge wird nicht überschrieben.
+- Sortierung nach Dauer und Hinzufügedatum nutzt neue Metadaten in playlist.json. Nach dem Upload muss der Playlist-Workflow einmal ausgeführt werden; vorhandene Titel erhalten beim ersten Lauf ein gemeinsames Ausgangsdatum, weil ältere Einfügedaten nicht rückwirkend rekonstruierbar sind.
+- Zufallswiedergabe mischt die aktive Liste und spielt jeden Titel einmal pro Durchlauf. Neue Durchläufe werden neu gemischt, direkte Wiederholungen am Durchlaufwechsel vermieden. Wiedergabe ohne Wiederholung stoppt nach einem Durchlauf.
+- Titelzuordnung zu eigenen Wiedergabelisten mit eindeutigen Schaltflächen „Hinzufügen“ und „Entfernen“ und sichtbarem Mitgliedschaftsstatus.
+- Warteschlange bleibt stets an derselben Position sichtbar, auch wenn sie leer ist.
 
 ## Neu in 004.8 (nur `wir-test`)
 

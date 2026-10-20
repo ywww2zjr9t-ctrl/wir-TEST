@@ -55,6 +55,11 @@ def metadata(path):
     return title, artist, cover
 
 
+previous={}
+try:
+    previous={t['file']:t for t in json.loads((ROOT/'playlist.json').read_text(encoding='utf-8')).get('tracks', [])}
+except (OSError, ValueError, TypeError, KeyError):
+    pass
 tracks = []
 (ROOT / 'audio').mkdir(exist_ok=True)
 for audio in sorted((ROOT / 'audio').iterdir(), key=lambda p: p.name.casefold()):
@@ -62,6 +67,14 @@ for audio in sorted((ROOT / 'audio').iterdir(), key=lambda p: p.name.casefold())
         continue
     title, artist, cover = metadata(audio)
     track = {'title': title or audio.stem.replace('_', ' ').strip(), 'file': webpath(audio)}
+    from datetime import datetime, timezone
+    track['addedAt'] = previous.get(track['file'], {}).get('addedAt') or datetime.now(timezone.utc).isoformat()
+    try:
+        info = File(audio)
+        if info and info.info and info.info.length:
+            track['duration'] = round(float(info.info.length), 2)
+    except Exception:
+        pass
     if artist:
         track['artist'] = artist
     if cover:
